@@ -1,0 +1,28 @@
+.brand-icons {
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.brand-icons-track {
+  display: flex;
+  animation: scrollIcons 40s linear infinite;
+  gap: 6rem;
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  flex-shrink: 0;
+}
+
+@keyframes scrollIcons {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,53 @@
+.header-text-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .header-text-bg-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 1; /* можешь изменить под нужный стиль */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  
+  .header-text-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+  
+  .header-main-title {
+    color: #FFF;
+    text-shadow: 1px 1px 2.6px #36645B;
+    font-family: 'Geometria';
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.15rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .header-icons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+  }
+  
+  @media (min-width: 1921px) {
+    .header-main-title {
+      font-size: 4rem;
+    }
+
+  }

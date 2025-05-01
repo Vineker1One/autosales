@@ -1,0 +1,77 @@
+.consultation-form {
+    background: white;
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+  
+  .form-title {
+    color: #427D73;
+    font-family: Geometria-medium;
+    font-size: 1.6875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.625rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #427D73;
+    font-family: Geometria-medium;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .form-input {
+    padding: 1rem 0 1rem 0;
+    border: none;
+    border-bottom: 2px solid #427D73;
+    background: transparent;
+    outline: none;
+    font-size: 1.2rem;
+  }
+  
+  .form-input::placeholder {
+    color: #a0b5af;
+  }
+  
+  .form-submit {
+    background-color: #3c6d65;
+    color: #ffffff;
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-submit:hover {
+    background-color: #2e5b53;
+  }
+  
+  .form-agreement {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #427D73;
+    font-family: Arial;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  

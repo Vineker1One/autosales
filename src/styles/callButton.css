@@ -1,0 +1,110 @@
+.call-button-wrapper {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 17.6rem;
+  height: 17.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.call-button {
+  width: 17.6rem;
+  height: 17.6rem;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+/* Наведение */
+.call-button:hover {
+  transform: scale(1.05);
+}
+
+/* Пульсирующие круги */
+.pulsing-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13rem; /* ПЕРВЫЙ круг */
+  height: 13rem;
+  border: 0.3rem solid #022f28;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  animation: pulse 2s infinite;
+  z-index: 1;
+}
+
+.pulsing-circle.second {
+  width: 15rem; /* ВТОРОЙ круг */
+  height: 15rem;
+  animation-delay: 1s;
+}
+
+/* Пульс-анимация */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .call-button-wrapper {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .call-button {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .pulsing-circle {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .pulsing-circle.second {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 600px) {
+  .call-button-wrapper {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .call-button {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .pulsing-circle {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .pulsing-circle.second {
+    width: 6rem;
+    height: 6rem;
+  }
+}
