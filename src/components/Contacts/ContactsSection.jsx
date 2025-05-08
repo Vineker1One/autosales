@@ -1,6 +1,8 @@
 import React from "react";
 import "../../styles/ContactsSection.css";
 
+import Map from "../Map/map";
+
 const PHONE_ICON = (
     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
   <circle cx="16.4006" cy="16.6399" r="15.6711" fill="#427D73"/>
@@ -60,8 +62,7 @@ const ContactsSection = () => {
       </div>
 
       <div className="contacts-map">
-        {/* Здесь позже вставим Яндекс.Карту */}
-        <div className="map-placeholder">Тут будет карта</div>
+        <Map/>
       </div>
     </section>
   );
