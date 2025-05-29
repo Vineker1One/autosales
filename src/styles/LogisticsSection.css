@@ -1,31 +1,35 @@
 .logistics-section {
     position: relative;
-    margin: 0 2.5rem;
-    background: #82BBB3;
-    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.55);
+    margin: 0 7rem;
+    background: white;
     overflow: hidden;
+    border: 1px solid #D7D6D2;
+    border-radius: 0.5rem;
   }
   
-  .logistics-background {
-    position: absolute;
-    top: 15%;
-    left: 65%;
-    transform: translateX(-50%);
-    width: 75rem;
-    height: 45rem;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 1;
-    z-index: 1;
-  }
+/* раньше было: 68.25rem × 34.9rem */
+.logistics-background{
+  position:absolute;
+  /* ставим ближе к правому краю, чтобы справа осталось место под кнопку */
+  top: 20%;                    /* ↓ опустить чуть ниже заголовка */
+  right: 3rem;                  /* прилипнет к правому полю секции */
+  width:clamp(30rem , 50vw , 100rem);
+  height:calc( var(--mapW,50vw) /2 );   /* ~ 2 : 1  */
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:.9;
+  z-index:0;
+}
+
   
   .logistics-title {
     padding: 9rem 0rem 7rem 4rem;
+    z-index: 1;
   }
 
   .logistics-title-text {
-    color: #FFF;
+    color: #1A160F;
     text-align: center;
     font-family: Geometria-bold;
     font-size: 4.375rem;
@@ -33,7 +37,6 @@
     line-height: normal;
     letter-spacing: 0.21875rem;
     text-transform: uppercase;
-    z-index: 2;
   }
   
   .countries-list {
@@ -52,7 +55,7 @@
     position: relative;
     width: 22.3125rem; /* ~357px */
     height: 6.25rem;   /* ~100px */
-    background: #00473C;
+    background: #6D6D6D;
     display: flex;
     align-items: center;
     padding: 0 1.5rem;
@@ -100,13 +103,31 @@
     letter-spacing: 0.10938rem;
   }
 
-  .call-button-logistic {
-    position: absolute;
-    bottom: -1rem; /* чуть больше отступ снизу для воздуха */
-    right: 23rem; /* слева такой же отступ как у всей секции */
-    z-index: 3; /* чуть выше стран */
-    margin-bottom: 3rem;
+.call-button-logistic{
+  position:absolute;
+  /* теперь относительно .logistics-section */
+  right: 14rem;                /* тот же, что у карты */
+  bottom: 3rem;               /* сколько нужно “воздуха” */
+  z-index:3;                  /* выше карты */
+}
+
+/* слегка уменьшаем саму кнопку на узких экранах */
+@media (max-width:1200px){
+  .call-button-logistic .call-button-wrapper{
+      transform:scale(.85);
   }
+  .logistics-background {
+    display: none;
+  }
+}
+@media (max-width:768px){
+  .call-button-logistic{
+      right:2rem; bottom:2rem;
+  }
+  .call-button-logistic .call-button-wrapper{
+      transform:scale(.8);
+  }
+}
   
   @media (max-width: 1200px) {
     .countries-list {
@@ -118,7 +139,7 @@
     }
   
     .country-card {
-      width: 20rem; /* немного адаптировать ширину */
+      width: 20rem; 
       height: 6rem;
     }
     
@@ -127,11 +148,6 @@
         height: 5rem;
     }
   
-    .logistics-background {
-      left: 50%;
-      width: 60rem;
-      height: 36rem;
-    }
   }
   
   @media (max-width: 768px) {

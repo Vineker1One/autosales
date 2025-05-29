@@ -3,7 +3,7 @@ import autoImage from '../../image/main-auto.png';
 import Navbar from './Navbar';
 import ContactButton from "./ContactButton";
 import CallButton from "./CallButton";
-import BrandIcons from "./BrandIcons";
+
 import HeaderText from "./HeroText";
 import blackAuto from "../../image/blackAuto.png";
 
@@ -16,28 +16,27 @@ export default function HeroSection() {
         {/* Навбар */}
         <div className="hero-navbar">
           <Navbar />
+          
         </div>
 
         {/* Заголовок */}
         <div className="hero-header-text">
           <HeaderText />
+          <h1 className="header-main-title">ПОДАРИ СЕБЕ РОСКОШЬ ВЫГОДНО</h1>
         </div>
 
         {/* Кнопки "Связаться" и "Заказать звонок" */}
+
+
+
+
+
+      </div>
+
         <div className="hero-buttons">
           <ContactButton />
           <CallButton />
         </div>
-
-        {/* Бренды */}
-        <div className="hero-brand-icons">
-          <BrandIcons />
-        </div>
-
-        <div className="hero-bottom-shadow" />
-
-
-      </div>
     </section>
   );
 }

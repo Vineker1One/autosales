@@ -10,6 +10,7 @@ const countries = [
   { name: 'Китай', flag: '/flags/china.png', background: '/backgrounds/china.png' },
   { name: 'Япония', flag: '/flags/japan.png', background: '/backgrounds/japan.png' },
   { name: 'Корея', flag: '/flags/korea.png', background: '/backgrounds/korea.png' },
+  { name: 'Грузия', flag: '/flags/georgia.png', background: '/backgrounds/georgia.png' },
 ];
 
 export default function LogisticsSection() {

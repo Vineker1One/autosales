@@ -10,7 +10,7 @@
   }
   
   .form-title {
-    color: #427D73;
+    color: #1A160F;
     font-family: Geometria-medium;
     font-size: 1.6875rem;
     font-style: normal;
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    color: #427D73;
+    color: #1A160F;
     font-family: Geometria-medium;
     font-size: 1rem;
     font-style: normal;
@@ -35,18 +35,18 @@
   .form-input {
     padding: 1rem 0 1rem 0;
     border: none;
-    border-bottom: 2px solid #427D73;
+    border-bottom: 2px solid #1A160F;
     background: transparent;
     outline: none;
     font-size: 1.2rem;
   }
   
   .form-input::placeholder {
-    color: #a0b5af;
+    color: #8C8A87;
   }
   
   .form-submit {
-    background-color: #3c6d65;
+    background-color: #1A160F;
     color: #ffffff;
     padding: 1rem;
     font-size: 1.4rem;
@@ -57,15 +57,12 @@
     transition: background-color 0.3s ease;
   }
   
-  .form-submit:hover {
-    background-color: #2e5b53;
-  }
   
   .form-agreement {
     justify-content: center;
     display: flex;
     align-items: center;
-    color: #427D73;
+    color: #1A160F;
     font-family: Arial;
     font-size: 0.875rem;
     font-style: normal;

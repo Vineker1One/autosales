@@ -1,6 +1,4 @@
 
-  
-
   .contact-btn-wrapper {
     position: relative;
     display: inline-block;
@@ -8,7 +6,7 @@
   
   .contact-btn {
     color: #FFF;
-    font-family: 'Geometria-medium';
+    font-family: 'Geometria-bold';
     font-size: 1.25rem;
     font-weight: 500;
     border-radius: 0.9375rem;
@@ -18,8 +16,8 @@
     position: relative;
     z-index: 1;
     padding-left: 4.81rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1.59rem;
+    padding-bottom: 1.56rem;
     padding-right: 3.19rem;
     text-align: left;
     cursor: pointer;
@@ -44,7 +42,7 @@
   .phone-icon {
     position: absolute;
     top: 50%;
-    width: 6rem;
+    width: 8rem;
     height: 6rem;
     display: flex;
     align-items: center;
@@ -57,8 +55,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid white;
@@ -90,23 +88,24 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: #FFF;
-    border: 1px solid #FFFDFD;
     border-radius: 0.9375rem;
-    backdrop-filter: blur(6.95px);
+    border: 1.339px solid rgba(255, 253, 253, 0.50);
+    background: rgba(217, 217, 217, 0.30);
+    backdrop-filter: blur(9.308283805847168px);
     padding: 0.56rem 4.5rem 0.63rem 1.5rem ;
-    color: #0A3D3E;
-    font-family: 'Geometria';
+    color: #FFFFFF;
+    font-family: 'Geometria-bold';
     font-size: 1.25rem;
     font-weight: 500;
     text-align: left;
     gap: 0.81rem;
     cursor: pointer;
+    z-index: 1;
   }
   
-  .call-btn-icon img {
-    width: 2.5rem;
-    height: 2.5rem;
+  .call-btn-icon {
+    width: 3.68313rem;
+    height: 3.68313rem;
   }
   
   .call-btn-text {
@@ -114,7 +113,7 @@
     line-height: 1.2rem;
   }
   
-  @media (min-width: 1921px) {
+  /* @media (min-width: 1921px) {
     .call-btn {
       padding: 1.56rem 5.5rem 1.63rem 2.5rem;
       font-size: 1.75rem;
@@ -131,4 +130,4 @@
 
   }
 
-  
+   */

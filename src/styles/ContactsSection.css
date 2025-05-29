@@ -1,25 +1,24 @@
 .contacts-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 2.5rem;
-
-    background: #ffffff;
-    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.55);
+    justify-content: center;
+    margin: 6rem 7rem;
+    gap: 6.8rem;
   }
   
-  .contacts-content {
-    flex: 1 1 30rem;
-    display: flex;
-    flex-direction: column;
-    margin-left: 5rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    gap: 2rem;
-  }
+.contacts-content{
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+  padding:4rem clamp(2rem,4vw,7rem);
+  background:#fff;
+  border:1px solid #D7D6D2;
+  border-radius:.5rem;
+  z-index:1;
+}
   
   .contacts-title {
-    color: #427D73;
+    color: #1A160F;
     font-family: Geometria-bold;
     font-size: 4.375rem;
     font-style: normal;
@@ -36,7 +35,7 @@
   }
 
   .phone-number {
-    color: #427D73;
+    color: #1A160F;
     font-family: Geometria-medium;
     font-size: 2.18938rem;
     font-style: normal;
@@ -53,7 +52,6 @@
     align-items: center;
     gap: 1rem;
     font-size: 1.4rem;
-    color: #3c6d65;
   }
   
   .phone-icon {
@@ -63,7 +61,7 @@
   .contacts-socials {
     display: flex;
     gap: 2rem;
-    background-color: #3c6d65;
+    background-color: #737373;
     width: 24.75rem;
     height: 4.25rem;
     align-items: center;
@@ -74,12 +72,11 @@
   .social-icon {
     font-size: 2rem;
     text-decoration: none;
-    color: #3c6d65;
     
   }
   
   .contacts-address {
-    color: #427D73;
+    color: #1A160F;
     font-family: Geometria-medium;
     font-size: 1.91713rem;
     font-style: normal;
@@ -88,8 +85,12 @@
   }
   
   .contacts-map {
-    flex: 1 1 40rem;
-    margin-top: 2rem;
+    display: flex;
+    background: white;
+    padding: 2.8rem 3.4rem;
+    border: 1px solid #D7D6D2;
+    border-radius: 0.5rem;
+    
   }
   
   .map-placeholder {

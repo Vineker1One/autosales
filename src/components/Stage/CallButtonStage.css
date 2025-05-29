@@ -1,0 +1,111 @@
+/* размеры, которые автоматически подстраиваются под ширину экрана */
+:root{
+  --icon-sz : 7.2rem;
+  --txt-sz  : 2.2rem;
+  --btn-pad : 1.1rem;
+  --btn-gap : 1.6rem;
+  --pulse   : calc(var(--icon-sz)*1.5);
+}
+
+/* обёртка – остаётся на своём месте */
+.call-button-stage-wrapper{
+  position:absolute;
+  right:0; bottom:0;        /* подгоните под «вырез» */
+  translate: 0% 0%;      /* чтобы центр совпал с отверстием */
+  z-index:2;
+}
+
+/* сама кнопка */
+.call-button-stage{
+  display:flex; align-items:center; gap:var(--btn-gap);
+  padding:var(--btn-pad) calc(var(--btn-pad)*1.6);
+  background:#737373;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:.9rem;
+  cursor:pointer;
+  transition:background .25s, transform .25s;
+}
+.call-button-stage:hover{background:#5f5f5f; transform:translateY(-2px);}
+
+/* SVG-иконка */
+.call-button-stage-icon svg{
+  width:var(--icon-sz); height:var(--icon-sz);
+  flex-shrink:0;
+  
+}
+
+.call-button-stage-icon {
+      position:relative;           /* база для абсолютных колец */
+  display:inline-flex;
+}
+
+/* текст */
+.call-button-stage-text{
+  font: 500 var(--txt-sz)/1 'Geometria-medium',sans-serif;
+  color:#fff; text-transform:none;
+
+}
+
+/* пульс-кольца */
+.pulse-circle-stage{
+  position:absolute;
+  top:50%; left:50%;
+  width:var(--pulse); height:var(--pulse);
+  translate:-50% -50%;          /* центр точно по иконке */
+  border-radius:50%;
+  border:2px solid #fff;
+  pointer-events:none;
+  animation:pulse-scale 2.4s infinite ease-out;
+}
+.pulse-circle-stage.circle-2-stage{animation-delay:1.2s;}
+
+/* сама «пульсация» */
+@keyframes pulse-scale{
+  0%  {transform:scale(.6); opacity:.7;}
+  100%{transform:scale(1.9); opacity:0;}
+}
+/* 
+@media (max-width: 1920px){
+  :root{
+    --icon-sz : 1.5rem;
+    --txt-sz  : 1.5rem;
+    --btn-gap : 0.6rem;
+    --btn-pad : .35rem;
+  }
+} */
+
+/* @media (min-width: 1600px) and (min-resolution: 1.25dppx) {
+  :root{
+    --icon-sz : 3.3rem;
+    --txt-sz  : 1.05rem;
+    --btn-pad : .7rem;
+  }
+} */
+@media (resolution: 1.25dppx) {
+  html { font-size: 13px; }  
+}
+@media (max-width: 1900px){
+  :root{
+    --icon-sz : 5.5rem;
+    --txt-sz  : 1.7rem;
+  }
+}
+
+/* ноутбуки 1440-1280 */
+@media (max-width: 1480px){
+  :root{
+    --icon-sz : 3.6rem;
+    --txt-sz  : 1.05rem;
+    --btn-gap : 2.2rem;
+  }
+}
+
+/* 1024–1200 px  */
+@media (max-width: 1200px){
+  :root{
+    --icon-sz : 1.9rem;
+    --txt-sz  : .6rem;
+    --btn-pad : .35rem;
+    --btn-gap : 0.6rem;
+  }
+}

@@ -2,46 +2,47 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.8rem;
-  border-radius: 1rem;
   margin: 0 auto;
   z-index: 999;
   position: relative
+}
+
+:root{
+  --pad-x   : clamp(0.8rem, 3vw, 3rem);   /* горизонтальные отступы у шапки  */
+  --logo-sz : clamp(3.5rem, 7vw, 7rem);   /* ширина логотипа                 */
+  --title-sz: clamp(15rem ,50vw, 50rem);   /* ширина SVG-надписи               */
+  --gap     : clamp(0.5rem, 2vw, 3rem);   /* промежуток между блоками         */
 }
 
 .navbar-logo {
   padding: 1.12rem 2rem;
   display: flex;
   align-items: center;
-  border-radius: 0.625rem;
-  background: rgba(12, 87, 75, 0.70);
-  box-shadow: -1px -1px 4px 0px rgba(0, 0, 0, 0.56) inset, 1px 1px 1.3px 0px rgba(255, 255, 255, 0.23) inset;
   backdrop-filter: blur(6.550000190734863px);
 }
 
 .navbar-logo img {
-  width: 4.35rem;
+  width: 7rem;
   height: auto;
 }
 
 .navbar-title {
-  padding: 0.94rem 4rem;
   color: white;
-  font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 1;
-  margin-left: 1rem;
-  border-radius: 0.625rem;
-  background: rgba(12, 87, 75, 0.70);
-  box-shadow: -2px -2px 1.5px 0px rgba(0, 0, 0, 0.27) inset, 1px 1px 0.8px 0px rgba(254, 254, 254, 0.21) inset;
+  background: #F3F3F3;
   backdrop-filter: blur(4.050000190734863px);
 }
 
-.navbar-text {
+.navbar-text img {
+  width:var(--title-sz);
+}
+
+/* .navbar-text {
   color: #FFF;
   font-family: "UKIJ Tor";
   font-size: 3.7rem;
@@ -50,7 +51,7 @@
   line-height: normal;
   letter-spacing: 1.2rem;
   text-transform: uppercase;
-}
+} */
 
 
 

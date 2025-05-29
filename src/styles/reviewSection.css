@@ -1,22 +1,19 @@
 .review-section {
-    margin: 0 2.5rem;
-    background: white;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.55);
   }
   
   .review-title {
     margin-bottom: 3.7rem;
-    color: #427D73;
+    color: #1A160F;
     text-align: center;
     font-family: Geometria-Bold;
-    font-size: 3.8125rem;
+    font-size: 4.375rem;
     font-style: normal;
-    font-weight: 700;
     line-height: normal;
     letter-spacing: 0.19063rem;
     text-transform: uppercase;
+    margin-top: 11rem;
   }
   
   .review-container {
@@ -76,7 +73,7 @@
     font-size: 3rem;
     background: none;
     border: none;
-    color: #2c5c52;
+    color: #1A160F;
     cursor: pointer;
     z-index: 2;
     transition: color 0.3s ease;
@@ -91,7 +88,7 @@
   }
   
   .scroll-button-review:hover {
-    color: #1f3f3a;
+    color: #737373;
   }
 
   .review-caption {
@@ -99,7 +96,7 @@
     display: flex; /* возвращаем flex для центрирования */
     align-items: center;
     justify-content: center;
-    background: #427D73;
+    background: #737373;
     padding: 1rem 2rem;
     max-width: 80%; /* Ограничиваем слишком широкие надписи */
     width: fit-content; /* Ширина по содержимому */
@@ -134,7 +131,7 @@
   }
   
   .dot.active {
-    background-color: #2c5c52;
+    background-color: #262626;
   }
   
   @media (max-width: 1200px) {

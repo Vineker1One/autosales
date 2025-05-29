@@ -1,9 +1,15 @@
 .stages-section {
-  margin: 0 2.5rem;
-  background: #FFF;
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.55);
+  
   position: relative;
   overflow: hidden;
+}
+
+:root{
+  --circle: clamp(22rem, 40vw, 55rem);     /* диаметр круга */
+  --radius: clamp(10rem, 15vw, 19rem);                           /* расстояние блока от центра */
+  --icon  : clamp(3rem , 6vw , 8rem);      /* иконка */
+  --lbl-w : clamp(6rem , 9.5vw, 10rem);      /* подпись */
+  --lbl-h : clamp(2rem , 4vw,  3.4rem);
 }
 
 .stages-content {
@@ -13,6 +19,11 @@
   align-items: flex-start;
   position: relative;
   overflow: visible;
+  background: #FFF;
+  margin: 1rem 9rem;
+  padding: 1.5rem 1rem;
+  border: 1px solid #D7D6D2;
+  border-radius: 0.5rem;
 }
 
 .stages-content h2 {
@@ -22,12 +33,13 @@
   align-self: center; /* Заголовок остаётся по центру */
 }
 
-.stages-grid {
-  position: relative;
-  width: 45rem; /* фиксированная ширина */
-  height: 55rem; /* фиксированная высота */
+.stages-grid{
+  margin-left: 2rem;
   margin-top: 3rem;
-  margin-left: 10rem;
+  position:relative;
+  width:var(--circle);
+  height:var(--circle);
+  flex-shrink:0;
 }
 
 
@@ -35,31 +47,33 @@
 .circle-text {
   position: absolute;
   top: 50%;
-  left: -70%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  font-size: clamp(2rem, 4vw, 4.3rem);
-  color: #384140;
-  text-align: center;
-  font-family: Geometria-Medium;
-  font-weight: 500;
-  width: 100%;
-  line-height: 1.2;
+  font-family: Geometria-bold;
+  font-size: clamp(1.5rem, 2vw, 3rem);
+
   text-transform: uppercase;
-  z-index: 2; 
+  color: #1A160F;
+  z-index: 2;
+  text-align: center;
 }
 
 .circle-text-stage {
-  color: #384140;
-  text-align: center;
-  font-family: Geometria-bold;
-  font-size: clamp(2.5rem, 5vw, 4.3rem);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  }
+  font-size: clamp(2.5rem, 4vw, 5rem);
+}
 
+
+.stage-label{
+  width:var(--lbl-w); min-height:var(--lbl-h);
+  background:#737373; color:#fff; border-radius:.5rem;
+  font: clamp(.7rem,1.1vw,1rem)/1.15 'Geometria-bold';
+  display:flex; align-items:center; justify-content:center;
+  padding:.3rem .5rem; text-align:center;
+  box-shadow:inset -.14rem -.14rem .12rem rgba(0,0,0,.28),
+             inset  .07rem  .07rem .08rem rgba(255,255,255,.18);
+  white-space:break-spaces;   /* длинные слова переносятся */
+}
+/* 
 .stages-grid::before {
   content: "";
   position: absolute;
@@ -68,9 +82,22 @@
   width: clamp(20rem, 35vw, 40rem);
   height: clamp(20rem, 35vw, 40rem);
   transform: translate(-50%, -50%);
-  border: 2px dashed rgba(12, 87, 75, 0.5); /* пунктирная линия, можно заменить на solid */
+  border: 2px dashed rgba(5, 5, 3, 0.4);
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
+} */
+
+
+.stage-item{
+  position:absolute;
+  left:50%; top:50%;
+  /* полярные координаты */
+  transform:
+      rotate(var(--deg))
+      translate(var(--radius))
+      rotate(calc(-1*var(--deg)))
+      translate(-50%,-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.4rem;
 }
 
 .stage {
@@ -92,7 +119,9 @@
   z-index: 2;
 }
 
-
+.stage-icon{
+  width:var(--icon); height:var(--icon); object-fit:contain;
+}
 
 /* Стили для текста */
 .stage-text {
@@ -115,98 +144,60 @@
   box-shadow: -1.729px -1.729px 1.297px 0px rgba(0, 0, 0, 0.27) inset, 0.865px 0.865px 0.692px 0px rgba(254, 254, 254, 0.21) inset;
 }
 
-.btn-img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+.btn-img{
+  position:relative;      /* =>  кнопка абсолютна в этом блоке  */
+  display:flex;           /* фото всегда растягивает высоту */
+  justify-content:center; /* центр по горизонтали */
 }
 
-/* Теперь картинка будет внутри image-wrapper */
-.image-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.image-wrapper{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  /* чтобы картинка никогда не «вылезала» сверху / снизу */
+  overflow:hidden;
+}
+.stages-photo{
+  /*
+    20 rem – минимальная ширина на очень узких экранах,
+    35vw     – «живёт» от ширины вьюпорта,
+    46.375rem – предел на 4 K.
+  */
+  width :clamp(20rem, 32.5vw, 46.375rem);
+  height:auto;
+  object-fit:contain;         /* не обрезаем картинку */
+  transition:width .4s;       /* плавное «схлопывание» */
+  pointer-events:none; user-select:none;
 }
 
-/* Картинка уже не вылетает */
-.stages-photo {
-  width: auto;
-  height: 80rem;
-  margin-right: -7rem; /* Сдвигать внутрь контейнера */
-  margin-top: -19rem;
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
+@media(max-width:1024px){      /* ноутбуки 1366-1440 ещё увидят фото */
+  .stages-photo{display:none;}
+}
+@media(max-width:1024px){
+  .call-button-stage-wrapper{display:none;}
 }
 
-.booking {
-  width: auto;
-  height: 7.2rem;
+@media(max-width:1024px){
+  .stages-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stages-grid {
+    margin-top: 0;
+  }
 }
 
-/* Кнопка нормально идёт под картинкой */
-.call-button-stage {
-  position: absolute;
-  bottom: 1rem; /* расстояние от низа картинки */
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  z-index: 2; /* Кнопка поверх картинки */
-}
+/* .pos1  { top:  22%;  left: 50%; transform: translate(-50%,0); }
+.pos2  { top: 39%;  right:  9%; transform: translate(0,-50%); }
+.pos3  { top: 65%;  right:  1%; transform: translate(0,-50%); }
+.pos4  { bottom: 11%; right:  9%; transform: translate(0,50%); }
+.pos5  { bottom: -5%; left: 49%; transform: translate(-50%,0); }
+.pos6  { bottom: 12%; left:  6%; transform: translate(0,50%); }
+.pos7  { top: 65%;  left:  -3%; transform: translate(0,-50%); }
+.pos8  { top: 40%;  left:  8%; transform: translate(0,-50%); } */
 
-
-/* Расположение элементов */
-.stage:nth-child(1) {
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.stage:nth-child(2) {
-  top: 25%;
-  left: 85%;
-  transform: translate(-50%, -50%);
-}
-
-.stage:nth-child(3) {
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-}
-
-.stage:nth-child(4) {
-  top: 75%;
-  left: 85%;
-  transform: translate(-50%, -50%);
-}
-
-.stage:nth-child(5) {
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-}
-
-.stage:nth-child(6) {
-  top: 75%;
-  left: 15%;
-  transform: translate(-50%, -50%);
-}
-
-.stage:nth-child(7) {
-  top: 50%;
-  left: 0%;
-  transform: translate(-50%, -50%);
-}
-
-.stage:nth-child(8) {
-  top: 25%;
-  left: 15%;
-  transform: translate(-50%, -50%);
-}
-
-@media (min-width: 1921px) {
+/* @media (min-width: 1921px) {
 
   
   .circle-text {
@@ -241,7 +232,7 @@
   .stages-photo {
     width: auto;
     height: 70rem;
-    margin-right: -7rem; /* Сдвигать внутрь контейнера */
+    margin-right: -7rem; 
     margin-top: -19rem;
     pointer-events: none;
     user-select: none;
@@ -285,5 +276,5 @@
     flex-direction: column;
     align-items: center;
   }
-}
+} */
 

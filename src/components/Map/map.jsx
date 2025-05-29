@@ -1,6 +1,6 @@
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 
-const SERVICE_COORDINATES = [52.75, 37.57]
+const SERVICE_COORDINATES = [47.237224221885505,39.74008750793388]
 
 export default function YandexMap() {
     return (
@@ -10,10 +10,9 @@ export default function YandexMap() {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 gap: "1rem",
-                height: "calc(100% - 3rem)",
+                height: "100%",
             }}>
-                <span>Мы на карте</span>
-                <Map height={"30rem"} width={"calc(100% - 3rem)"} defaultState={{ center: SERVICE_COORDINATES, zoom: 9 }}>
+                <Map height={"100%"} width={"51.5rem"} defaultState={{ center: SERVICE_COORDINATES, zoom: 19 }} options={{autoFitToViewport:'always'}}>
                     <Placemark key={'placemark-main'}
                         geometry={SERVICE_COORDINATES}
                         properties={{
