@@ -17,7 +17,7 @@ const MenuButton = () => {
   return (
     <>
       <div className="menu-button-text" onClick={() => setIsOpen(true)}>
-        MENU
+        ME<br/>NU
       </div>
 
       {isOpen && (

@@ -1,27 +1,48 @@
+.call-btn {
+  /* Размеры кнопок и элементов внутри них */
+  --btn-fz: clamp(0.5rem, 1.5vw, 2rem);          /* размер шрифта */
+  --btn-pad-x: clamp(0.5rem, 3vw, 2rem);   /* горизонтальный паддинг */
+  --btn-pad-y: clamp(0.4rem, 0.5vw, 1rem);   /* вертикальный паддинг */
+  --phone-sz: clamp(2.5rem, 5vw, 12rem);         /* размер круга с телефоном */
+  --pulse-sz: calc(var(--phone-sz) * 0.9);      /* размер анимации пульса */
+  --call-icon: clamp(1rem, 3vw, 3.7rem);     /* call-btn icon */
+  --callbtn-gap: clamp(0.3rem, 1vw, 1rem);
+}
 
+  .contact-btn-wrapper {
+  /* Локальные переменные только для этой кнопки! */
+  --contact-btn-fz: clamp(0.5rem, 1.8vw, 3rem);
+  --contact-btn-pad-x: clamp(1.1rem, 2.6vw, 5rem);
+  --contact-btn-pad-y: clamp(0.65rem, 1.3vw, 1.4rem);
+  --contact-phone-sz: clamp(3rem, 7.3vw, 10rem);
+  --contact-pulse-sz: calc(var(--contact-phone-sz) * 0.9);
+}
+
+
+  
   .contact-btn-wrapper {
     position: relative;
     display: inline-block;
   }
   
-  .contact-btn {
-    color: #FFF;
-    font-family: 'Geometria-bold';
-    font-size: 1.25rem;
-    font-weight: 500;
-    border-radius: 0.9375rem;
-    border: 1px solid rgba(255, 253, 253, 0.50);
-    background: rgba(217, 217, 217, 0.30);
-    backdrop-filter: blur(6.95px);
-    position: relative;
-    z-index: 1;
-    padding-left: 4.81rem;
-    padding-top: 1.59rem;
-    padding-bottom: 1.56rem;
-    padding-right: 3.19rem;
-    text-align: left;
-    cursor: pointer;
-  }
+.contact-btn {
+  color: #FFF;
+  font-family: 'Geometria-bold';
+  font-size: var(--contact-btn-fz);
+  font-weight: 500;
+  border-radius: 0.9375rem;
+  border: 1px solid rgba(255, 253, 253, 0.50);
+  background: rgba(217, 217, 217, 0.30);
+  backdrop-filter: blur(6.95px);
+  position: relative;
+  z-index: 1;
+  padding-left: clamp(2rem, 5vw, 7rem);
+  padding-top: var(--contact-btn-pad-y);
+  padding-bottom: var(--contact-btn-pad-y);
+  padding-right: var(--contact-btn-pad-x);
+  text-align: left;
+  cursor: pointer;
+}
 
   .contact-btn-icon,
 .phone-icon,
@@ -29,105 +50,121 @@
   pointer-events: none;
 }
   
-  .contact-btn-icon {
-    position: absolute;
-    left: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6rem;
-    height: 6rem;
-    z-index: 2;
-  }
+.contact-btn-icon {
+  position: absolute;
+  transform: translateY(-50%);
+  width: var(--contact-phone-sz);
+  height: var(--contact-phone-sz);
+  z-index: 2;
+}
+
+
   
+
+.phone-icon{
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: var(--contact-phone-sz);
+  height: var(--contact-phone-sz);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.phone-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+  
+.pulse-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--contact-phone-sz);
+  height: var(--contact-phone-sz);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid white;
+  opacity: 0.7;
+  animation: pulseAnim 2s infinite ease-out;
+  z-index: 1;
+}
+.circle-2 {
+  animation-delay: 1s;
+  opacity: 0.5;
+}
+  
+
+
+.call-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0.9375rem;
+  border: 1.339px solid rgba(255, 253, 253, 0.50);
+  background: rgba(217, 217, 217, 0.30);
+  backdrop-filter: blur(9.3px);
+  padding: var(--btn-pad-y) var(--btn-pad-x) var(--btn-pad-y);
+  color: #FFFFFF;
+  font-family: 'Geometria-bold';
+  font-size: var(--btn-fz);
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  z-index: 1;
+  gap: var(--callbtn-gap);
+}
+
+.call-btn-icon {
+  width: var(--call-icon);
+  height: var(--call-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-btn-text {
+  margin-left: 1rem;
+  line-height: 1.2;
+  font-size: var(--btn-fz);
+}
+
+@keyframes pulseAnim {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1441px) {
   .phone-icon {
-    position: absolute;
-    top: 50%;
-    width: 8rem;
-    height: 6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translate(-50%, -50%);
-    z-index: 3;
+    top: 17.1%;
   }
-  
-  .pulse-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5.5rem;
-    height: 5.5rem;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid white;
-    opacity: 0.7;
-    animation: pulseAnim 2s infinite ease-out;
-    z-index: 1;
-  }
-  
-  .circle-2 {
-    animation-delay: 1s;
-    opacity: 0.5;
-  }
-  
-  @keyframes pulseAnim {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.6;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1.8);
-      opacity: 0;
-    }
-  }
-  
+}
 
-  /*  */
-
+/* @media (min-width: 1921px) {
   .call-btn {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 0.9375rem;
-    border: 1.339px solid rgba(255, 253, 253, 0.50);
-    background: rgba(217, 217, 217, 0.30);
-    backdrop-filter: blur(9.308283805847168px);
-    padding: 0.56rem 4.5rem 0.63rem 1.5rem ;
-    color: #FFFFFF;
-    font-family: 'Geometria-bold';
-    font-size: 1.25rem;
-    font-weight: 500;
-    text-align: left;
-    gap: 0.81rem;
-    cursor: pointer;
-    z-index: 1;
-  }
-  
-  .call-btn-icon {
-    width: 3.68313rem;
-    height: 3.68313rem;
-  }
-  
-  .call-btn-text {
-    margin-left: 1rem;
-    line-height: 1.2rem;
-  }
-  
-  /* @media (min-width: 1921px) {
-    .call-btn {
-      padding: 1.56rem 5.5rem 1.63rem 2.5rem;
-      font-size: 1.75rem;
+    padding: 1.56rem 5.5rem 1.63rem 2.5rem;
+    font-size: 1.75rem;
     }
-
+    
     .contact-btn {
       padding-left: 5.81rem;
       padding-top: 2rem;
       padding-bottom: 2rem;
       padding-right: 4.19rem;
       font-size: 2.25rem;
-    }
-    
-
-  }
-
-   */
+      }
+      
+      
+      }
+      
+      */

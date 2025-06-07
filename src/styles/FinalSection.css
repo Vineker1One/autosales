@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 7rem;
+    margin-bottom: clamp(2rem, 7vw, 7rem);
     background-size:
                   clamp(20rem , 120vw , 120rem)
                   auto;
@@ -21,31 +21,32 @@
   .final-title {
     color: #FFF;
     font-family: "UKIJ Tor";
-    font-size: clamp(2.5rem,7vw,12rem);
+    font-size: clamp(1.2rem, 7vw, 12rem);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing:clamp(.4rem,2vw,3.6rem);
+    letter-spacing: clamp(.18rem, 2vw, 3.6rem);
     text-transform: uppercase;
     opacity: 0.8;
   }
   
   .final-buttons {
-    margin-block:clamp(2rem,6vw,4.5rem) clamp(3rem,8vw,7rem);
+    margin-block: clamp(1rem, 6vw, 4.5rem) clamp(2rem, 8vw, 7rem);
     display: flex;
     flex-direction: column;
-    gap:clamp(.6rem,1.2vw,1rem);
+    gap: clamp(.4rem, 1.2vw, 1rem);
+    
   }
   
 
 .final-button{
-  --pad:clamp(.8rem,2vw,2rem);
+  --pad: clamp(.55rem, 2vw, 2rem);;
   padding:var(--pad);
   border:none;
   border-radius:.94rem;
   background:rgba(255,255,255,.8);
   backdrop-filter:blur(9px);
-  font:500 clamp(1rem,3vw,3.2rem)/1 'Geometria-medium',sans-serif;
+  font: 500 clamp(0.8rem, 3vw, 3.2rem)/1 'Geometria-medium',sans-serif;
   color:#1A160F;
   cursor:pointer;
   transition:background .25s,transform .25s;
@@ -53,16 +54,16 @@
 .final-button:hover{background:rgba(255,255,255,.95);transform:translateY(-2px);}
   
 
-  .final-info {
-    margin-top: 6rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    color: #3c6d65;
-    font-size: 1.2rem;
-    gap: 1.5rem;
-  }
+.final-info {
+  margin-top: clamp(2.2rem, 7vw, 6rem);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #3c6d65;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  gap: clamp(0.8rem, 2vw, 1.5rem);
+}
 
   .final-adress {
     display: flex;
@@ -73,7 +74,7 @@
     color: #1A160F;
     text-align: center;
     font-family: Geometria-medium;
-    font-size: 1.91713rem;
+    font-size: clamp(1rem, 4vw, 1.92rem);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -88,10 +89,10 @@
   .final-phones-text {
     color: #1A160F;
     font-family: Geometria-medium;
-    font-size: 1.375rem;
+    font-size: clamp(1rem, 3vw, 1.375rem);
     font-style: normal;
     line-height: normal;
-    letter-spacing: 0.06875rem;
+    letter-spacing: clamp(0.04rem, 0.5vw, 0.069rem);
     text-transform: uppercase;
 }
 
@@ -99,7 +100,7 @@
   .final-socials {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: clamp(0.5rem, 2vw, 1rem);
   }
   
   .final-socials img {
@@ -108,10 +109,10 @@
   }
   
   .final-links {
-    margin-bottom: 3.5rem;
+    margin-bottom: clamp(1.1rem, 3vw, 3.5rem);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: clamp(0.5rem, 2vw, 1rem);
   }
   
   .final-link {
@@ -120,7 +121,7 @@
     text-decoration: none;
     text-align: center;
     font-family: Geometria-medium;
-    font-size: 2rem;
+    font-size: clamp(0.92rem, 2.7vw, 2rem);
     font-style: normal;
     font-weight: 500;
     line-height: normal;

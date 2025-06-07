@@ -1,29 +1,18 @@
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  z-index: 999;
-  position: relative
-}
-
+/* 1. Корень задаёт «гибкие» переменные */
 :root{
-  --pad-x   : clamp(0.8rem, 3vw, 3rem);   /* горизонтальные отступы у шапки  */
-  --logo-sz : clamp(3.5rem, 7vw, 7rem);   /* ширина логотипа                 */
-  --title-sz: clamp(15rem ,50vw, 50rem);   /* ширина SVG-надписи               */
-  --gap     : clamp(0.5rem, 2vw, 3rem);   /* промежуток между блоками         */
+  --logo-sz : clamp(2.5rem , 8vw , 7rem);
+  --title-sz: clamp(11rem , 40vw, 40rem);
+  --pad-x   : clamp(.5rem, 3vw , 5rem);
+  --gap-x   : clamp(.5rem, 2vw , 2.5rem);
+  --pad-logo: clamp(0.5rem, 2vw, 1.12rem)
 }
 
-.navbar-logo {
-  padding: 1.12rem 2rem;
-  display: flex;
-  align-items: center;
-  backdrop-filter: blur(6.550000190734863px);
-}
-
-.navbar-logo img {
-  width: 7rem;
-  height: auto;
+/* 2. Шапка – mobile-first: логотип + меню (бургер) по краям */
+.navbar{
+  display:flex; align-items:center;
+  justify-content:space-between;
+  gap:var(--gap-x);
+  position:relative; z-index:999;
 }
 
 .navbar-title {
@@ -38,20 +27,25 @@
   backdrop-filter: blur(4.050000190734863px);
 }
 
-.navbar-text img {
-  width:var(--title-sz);
+.navbar-logo img{width:var(--logo-sz);height:auto;
+  padding-left: var(--pad-logo);
+  padding-bottom: var(--pad-logo);
+  padding-top: var(--pad-logo);
 }
 
-/* .navbar-text {
-  color: #FFF;
-  font-family: "UKIJ Tor";
-  font-size: 3.7rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 1.2rem;
-  text-transform: uppercase;
-} */
+/* надпись «AUTOSALES» как картинка – масштабируется */
+.navbar-text img{width:var(--title-sz);height:auto}
+
+/* 3. Если ширина ≥ 768 – показываем широкий заголовок и скрываем бургер */
+@media (min-width:768px){
+  .navbar{justify-content:flex-start;}
+  .navbar-text{flex:0}
+  .menu-button-text{display:none}      /* ваш компонент MenuButton */
+}
 
 
-
+@media (max-width:480px){
+  .navbar{flex-direction:row;gap:0.6rem;}
+  .navbar-logo img{width:calc(var(--logo-sz)*0.8)}
+  .navbar-text img{width:calc(var(--title-sz)*0.9)}
+}

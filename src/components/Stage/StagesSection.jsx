@@ -32,7 +32,7 @@ const StagesSection = () => {
       <div className="stages-content">
         <div
         className="stages-grid"
-        // style={{ backgroundImage: `url(${circleBg})` }}
+
       >
         <div className="circle-text"><span className="circle-text-stage">Этапы</span><br />продажи</div>
         {items.map(({ icon, text, deg }, idx) => (

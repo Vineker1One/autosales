@@ -12,7 +12,7 @@ export default function YandexMap() {
                 gap: "1rem",
                 height: "100%",
             }}>
-                <Map height={"100%"} width={"51.5rem"} defaultState={{ center: SERVICE_COORDINATES, zoom: 19 }} options={{autoFitToViewport:'always'}}>
+                <Map height={"100%"} width={"100%"} defaultState={{ center: SERVICE_COORDINATES, zoom: 19 }} options={{autoFitToViewport:'always'}}>
                     <Placemark key={'placemark-main'}
                         geometry={SERVICE_COORDINATES}
                         properties={{

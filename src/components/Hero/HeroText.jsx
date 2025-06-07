@@ -1,5 +1,4 @@
 import '../../styles/headerText.css';
-import heroMap from '../../image/heroMap.png'
 
 
 

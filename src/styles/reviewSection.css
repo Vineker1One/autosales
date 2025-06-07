@@ -4,17 +4,18 @@
   }
   
   .review-title {
-    margin-bottom: 3.7rem;
+    margin-bottom: clamp(0.1rem, 4vw, 3.7rem);
+    margin-top: clamp(1.2rem, 7vw, 11rem);
     color: #1A160F;
     text-align: center;
     font-family: Geometria-Bold;
-    font-size: 4.375rem;
+    font-size: clamp(1.1rem, 6vw, 4.375rem);
     font-style: normal;
     line-height: normal;
-    letter-spacing: 0.19063rem;
+    letter-spacing: clamp(0.05rem, 0.5vw, 0.19rem);
     text-transform: uppercase;
-    margin-top: 11rem;
   }
+
   
   .review-container {
     position: relative;
@@ -91,75 +92,54 @@
     color: #737373;
   }
 
-  .review-caption {
-    margin: 2rem auto 4rem auto; /* Автоматические отступы слева и справа */
-    display: flex; /* возвращаем flex для центрирования */
-    align-items: center;
-    justify-content: center;
-    background: #737373;
-    padding: 1rem 2rem;
-    max-width: 80%; /* Ограничиваем слишком широкие надписи */
-    width: fit-content; /* Ширина по содержимому */
+.review-caption {
+  margin: clamp(1rem, 3vw, 2rem) auto clamp(2rem, 5vw, 4rem) auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #737373;
+  padding: clamp(0.4rem, 2vw, 1rem) clamp(1rem, 5vw, 2rem);
+  max-width: 80%;
+  width: fit-content;
 }
 
+.review-caption-text {
+  color: #FFF;
+  text-align: center;
+  font-family: Geometria;
+  font-size: clamp(0.75rem, 4vw, 1.625rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: clamp(0.04rem, 0.5vw, 0.08125rem);
+  text-transform: uppercase;
+}
 
-  .review-caption-text {
-    color: #FFF;
-    text-align: center;
-    font-family: Geometria;
-    font-size: 1.625rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.08125rem;
-    text-transform: uppercase;
-  }
+/* Кружки под видео */
+.dots-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.3rem, 2vw, 1rem);
+  margin-top: clamp(1rem, 3vw, 2rem);
+}
+
+.dot {
+  width: clamp(0.4rem, 2vw, 0.75rem);
+  height: clamp(0.4rem, 2vw, 0.75rem);
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #262626;
+}
+
   
-  .dots-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  
-  .dot {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background-color: #ccc;
-    transition: background-color 0.3s;
-  }
-  
-  .dot.active {
-    background-color: #262626;
-  }
-  
-  @media (max-width: 1200px) {
-    .review-title {
-      font-size: 3rem;
-      margin-bottom: 3rem;
-    }
-    
-    .review-card {
-      width: 12rem;
-      height: 24rem;
-    }
-    
-    .review-card.active {
-      width: 18rem;
-      height: 30rem;
-    }
-  
-    .scroll-button-review {
-      font-size: 2.5rem;
-    }
-  }
+
   
   @media (max-width: 992px) {
-    .review-title {
-      font-size: 2.5rem;
-      margin-bottom: 2.5rem;
-    }
+
   
     .review-wrapper {
       gap: 2rem;
@@ -181,42 +161,54 @@
   }
   
   @media (max-width: 768px) {
-    .review-container {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
+  .review-container {
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    display: block !important;      /* <-- вот это важно! */
+    justify-content: unset !important; /* сбрасываем центрирование */
+    align-items: unset !important;
+  }
   
-    .review-wrapper {
-      flex-wrap: nowrap;
-      padding: 2rem 1rem;
-      gap: 1rem;
-      transform: none !important; /* на мобиле полностью убираем смещение */
-    }
-  
-    .review-card {
-      scroll-snap-align: center;
-      width: 80%;
-      max-width: 320px;
-      flex-shrink: 0;
-      opacity: 0.5;
-    }
+  .review-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    min-width: 100vw;         /* обязательно! */
+    width: max-content;       /* а это позволит растянуться на все карточки */
+  }
+  .review-card {
+    scroll-snap-align: center;
+          width: 7.5rem;
+      height: 15rem;      /* привязывайся к vw, а не % */
+    flex-shrink: 0;
+    opacity: 0.5;
+  }
+
   
     .review-card.active {
       opacity: 1;
     }
+
+    .scroll-button-review {
+      display: none;
+  }
   }
   
   
   
   
   
-  @media (max-width: 576px) {
-    .review-title {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-    }
-  
+  @media (max-width: 767px) {
+
     .review-wrapper {
       gap: 1rem;
     }
@@ -242,10 +234,7 @@
   }
   
   @media (max-width: 400px) {
-    .review-title {
-      font-size: 1.6rem;
-    }
-  
+
     .review-card {
       width: 7rem;
       height: 14rem;
@@ -260,4 +249,6 @@
       font-size: 1.6rem;
     }
   }
+  
+
   

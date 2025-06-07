@@ -9,34 +9,22 @@ import blackAuto from "../../image/blackAuto.png";
 
 export default function HeroSection() {
   return (
-    <section className="hero-section" id="home">
-      <img src={blackAuto} alt="auto" className="hero-background-image" />
-      <div className="hero-shadow"></div>
-      <div className="hero-content">
-        {/* Навбар */}
-        <div className="hero-navbar">
-          <Navbar />
-          
-        </div>
+<section className="hero-section" id="home">
+    <div className="hero-navbar">
+      <Navbar />
+    </div>
+    <div className="hero-header-text">
+      <HeaderText />
+      <h1 className="header-main-title">ПОДАРИ СЕБЕ РОСКОШЬ ВЫГОДНО</h1>
+    </div>
 
-        {/* Заголовок */}
-        <div className="hero-header-text">
-          <HeaderText />
-          <h1 className="header-main-title">ПОДАРИ СЕБЕ РОСКОШЬ ВЫГОДНО</h1>
-        </div>
+    {/* <img src={blackAuto} alt="auto" className="hero-background-image" /> */}
+    <div className="hero-buttons">
+      <ContactButton />
+      <CallButton />
+    </div>
 
-        {/* Кнопки "Связаться" и "Заказать звонок" */}
+</section>
 
-
-
-
-
-      </div>
-
-        <div className="hero-buttons">
-          <ContactButton />
-          <CallButton />
-        </div>
-    </section>
   );
 }

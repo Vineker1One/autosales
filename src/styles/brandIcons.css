@@ -1,28 +1,50 @@
+:root {
+  --brand-icon-sz: clamp(2rem, 4vw, 7rem);
+  --brand-gap: clamp(1.5rem, 4vw, 6rem);
+  --brand-anim-duration: 40s;
+}
+
 .brand-icons {
   overflow: hidden;
   width: 100%;
-  padding: 2rem 0;
+  padding-top: 1rem;
   position: relative;
 }
 
 .brand-icons-track {
   display: flex;
-  animation: scrollIcons 40s linear infinite;
-  gap: 6rem;
+  animation: scrollIcons var(--brand-anim-duration) linear infinite;
+  gap: var(--brand-gap);
 }
 
 .brand-icon {
   display: flex;
   align-items: center;
-  gap: 6rem;
+  gap: var(--brand-gap);
   flex-shrink: 0;
 }
 
+.brand-icon svg {
+  width: var(--brand-icon-sz);
+  height: var(--brand-icon-sz);
+}
+
 @keyframes scrollIcons {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Скорость и размер для меньших экранов */
+@media (max-width: 1200px) {
+  :root { --brand-anim-duration: 25s; }
+}
+@media (max-width: 768px) {
+  :root { --brand-anim-duration: 16s; }
+}
+@media (max-width: 480px) {
+  :root {
+    --brand-anim-duration: 9s;
+    --brand-icon-sz: 2rem;
+    --brand-gap: 1.3rem;
   }
 }

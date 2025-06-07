@@ -6,7 +6,7 @@ const App = () => {
   return (
       <>
       <LandingPage />;
-      <MobileNotice />
+      {/* <MobileNotice /> */}
       </>
   )
 };  

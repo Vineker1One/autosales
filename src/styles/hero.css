@@ -1,30 +1,36 @@
 .hero-section {
+  min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding-bottom:clamp(15rem, 36.5vw, 46rem); /* подберите под ваш фон */
-  overflow: hidden;           /* вот ключевой момент */
+  justify-content: flex-end; /* все вниз */
+  padding-bottom: 0; /* или нужный тебе паддинг */
+  overflow: hidden;
+  background: url('../image/blackAuto.png') center bottom/cover no-repeat;
+}
+
+
+.hero-navbar {
   position: relative;
-  z-index: 4;
 }
 
 .hero-background-image {
   position: absolute;
   left: 50%;
-  bottom:0;
-  transform:translateX(-50%);
-  width:	clamp(80rem,101vw,180rem);
-  z-index: 1;
-  pointer-events: none;
-  max-width: 120%; 
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 2560px; /* ограничь максимально, чтобы на 4K не разъезжалось */
   height: auto;
-  object-fit: contain;
-
+  min-height: 200px;
+  z-index: 0;
+  pointer-events: none;
+  object-fit: contain; /* главное! */
 }
-
 .hero-header-text {
   position: relative;
   width: 100%;
   text-align: center;
+  z-index: 10;
 }
 
 
@@ -33,8 +39,7 @@
   color: #FFF;
   text-shadow: 1px 1px 2.6px #36645B;
   font-family: 'Geometria-bold';
-    font-size:clamp(1.8rem,3vw,3rem);
-
+  font-size:clamp(0.7rem,3vw,3rem);
   letter-spacing:clamp(0.08rem,0.3vw,0.15rem);
   font-style: normal;
   font-weight: 500;
@@ -42,141 +47,114 @@
   margin-bottom: 2.5rem;
 }
 
-/* .hero-section::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), transparent);
-  pointer-events: none;
-  z-index: 3;
-} */
 
 .hero-content {
-  flex: 1;                /* занимает всё доступное место сверху */
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
   z-index: 4;
   color: white;
-}
-.hero-buttons {
-  position: absolute;     /* теперь относительно .hero-section */
-  bottom:clamp(2rem,7vh,7rem); /* 2 rem – минимум, 7 rem – максимум */
-  left:clamp(2rem,9vw,9rem);            /* твой прежний отступ слева */
-  display: flex;
-  gap:clamp(4rem,12vw,20rem);           /* прежний gap между кнопками */
-  margin: 0;              /* сбрасываем margin-top/margin-bottom */
+  width: 100%;
+  height: clamp(10rem, 26vh, 23rem); /* Минимум 10rem, максимум 23rem, по умолчанию ~26% экрана */
+  left: 0; 
+  right: 0;
+  bottom: 0;
+  justify-content: flex-end; /* Кнопки всегда снизу */
 }
 
-@media (min-width:2560px){
-  .hero-background-image{ width: 161rem; }  /* или scale(1.8) */
+.hero-buttons {
+  display: flex;
+  gap: clamp(1rem, 12vw, 20rem);
+  justify-content: flex-start; /* или center, как нужно */
+  margin-top: auto;         /* прижимаем вниз */
+  margin-bottom: 5%;      /* отступ от низа секции/фона */
+  z-index: 10;
+  position: relative;       /* больше не absolute! */
+  left: 10%;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    /* Новый фон, как ты и сделал */
+    background: url('../image/blackAuto-mobile.png') center bottom/cover no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;      /* Чтобы всегда занимало весь экран */
+    position: relative;
+  }
+
+  .hero-header-text {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 320px; /* или auto, если не хочешь ограничивать */
+    width: 100%;
+    z-index: 10;
+    /* Можно добавить тень/отступ если фон светлый */
+  }
+
+  .header-main-title {
+    /* Не обязательно, можно убрать flex — уже центрируется через родителя */
+    margin: 0;
+    padding: 0 1rem; /* Чтобы не прилипал к краям */
+    font-size: clamp(1.1rem, 6vw, 2.2rem);
+  }
+
+    .hero-buttons {
+      margin-top: auto;
+      margin-bottom: 5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      left: 0;
+  }
+}
+/* @media (min-width:2560px){
+  .hero-background-image{ width: 161rem; } 
   .header-main-title   { font-size: 4.5rem; }
   .hero-buttons        { gap: 26rem; }
 }
 
-
-/* @media (min-width: 2561px) {
-  .hero-background-image {
-    max-width: 100%;
-    transform: translateX(-50%) scale(2.3);
-    bottom: -5rem; 
-  }
-}
-
-@media (min-width: 1921px) {
-
+@media (max-width: 1440px) and (min-width: 1100px) {
   .hero-buttons {
-    gap: clamp(3rem, 10vw, 10rem);
-    margin-top: 35rem;
-  }
-
-  .hero-background-image {
-    max-width: 100%;
-    transform: translateX(-50%) scale(1.8);
-    bottom: -5rem;
-
-  }
-
-  .hero-brand-icons {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .hero-content {
-    height: 100svh;
-  }
-}
-
-@media (width: 1920px) and (height: 1200px) {
-
-
-  .hero-buttons {
-    gap: clamp(3rem, 10vw, 10rem);
-    margin-top: 25rem;
-  }
-
-  .hero-background-image {
-    max-width: 100%;
-    transform: translateX(-50%) scale(1.4);
-    bottom: -5rem; 
-
-  }
-
-  .hero-brand-icons {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .hero-content {
-    height: 100svh;
-  }
-}
-
-@media (max-width: 1800px) {
-  .hero-buttons {
-    gap: clamp(3rem, 5vw, 10rem);
-  }
-
-  .hero-background-image {
-    max-width: 100%;
-    transform: translateX(-50%) scale(1.1);
-    bottom: -5rem;
-
-  }
-}
-
-
-@media (max-width: 1400px) {
-  .hero-buttons {
+    bottom: 4rem; 
     gap: 6rem;
   }
+}
 
-  .hero-background-image {
-    scale: 1.05;
-    bottom: -3rem;
+@media (max-width: 1100px) and (min-width: 900px) {
+  .hero-buttons {
+    bottom: 3rem;
+    gap: 4rem;
   }
 }
 
-
 @media (max-width: 768px) {
-  .hero-section {
-    padding: 2rem 1.5rem;
-  }
-
   .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5vh;
+    left: 40%;
+    bottom: 1.5rem;
+    transform: translateX(-50%);
   }
+}
 
-  .hero-header-text {
-    margin-left: 0;
-    text-align: center;
+@media (max-width: 430px) {
+  .hero-buttons {
+    left: 40%;
+    bottom: .5rem;
+    transform: translateX(-50%);
   }
-} */
+}
 
+@media (max-width: 375px) {
+  .hero-buttons {
+    left: 50%;
+    bottom: 7.5rem;
+    transform: translateX(-50%);
+  }
+}
+
+ */
