@@ -54,7 +54,7 @@ const FinalSection = () => {
           </div>
         </div>
           <div id="contact-form">
-          <ConsultationForm />
+          {/* <ConsultationForm /> */}
           </div>
 
         <div className="final-info">
@@ -76,14 +76,14 @@ const FinalSection = () => {
             </a>
           </div>
 
-          <div className="final-links">
+          {/* <div className="final-links">
             <a href="/privacy-policy" className="final-link">Политика конфиденциальности</a>
             <a href="/public-offer" className="final-link">Публичная оферта</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default FinalSection;

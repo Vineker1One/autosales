@@ -5,7 +5,7 @@ import MobileNotice from './components/MobileNotice';
 const App = () => {
   return (
       <>
-      <LandingPage />;
+      <LandingPage />
       {/* <MobileNotice /> */}
       </>
   )
