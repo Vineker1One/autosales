@@ -2,14 +2,14 @@ import { useState, useRef, useEffect } from 'react';
 import '../../styles/reviewSection.css'
 
 const initialVideos = [
-  { src: '/videos/GENESISGV80.MOV', caption: 'Genesis GV80' },
-  { src: '/videos/LANDROVER.MOV', caption: 'Land Rover Range Rover Supercharger' },
-  { src: '/videos/Lexus.MOV', caption: 'Lexus RX' },
-  { src: '/videos/MERCEDES_GLB.MOV', caption: 'Mercedes Benz GLB 200d' },
-  { src: '/videos/AMG_GT.MOV', caption: 'Mercedes AMG GT' },
-  { src: '/videos/BMWm340i.mov', caption: 'BMW M340i' },
-  { src: '/videos/cooper.mov', caption: 'MINI COOPER' },
-  { src: '/videos/Palisade.mov', caption: 'Hyundai Palisade' },
+  { src: process.env.PUBLIC_URL + '/videos/GENESISGV80.MOV', caption: 'Genesis GV80' },
+  { src: process.env.PUBLIC_URL + '/videos/LANDROVER.MOV', caption: 'Land Rover Range Rover Supercharger' },
+  { src: process.env.PUBLIC_URL + '/videos/Lexus.MOV', caption: 'Lexus RX' },
+  { src: process.env.PUBLIC_URL + '/videos/MERCEDES_GLB.MOV', caption: 'Mercedes Benz GLB 200d' },
+  { src: process.env.PUBLIC_URL + '/videos/AMG_GT.MOV', caption: 'Mercedes AMG GT' },
+  { src: process.env.PUBLIC_URL + '/videos/BMWm340i.mov', caption: 'BMW M340i' },
+  { src: process.env.PUBLIC_URL + '/videos/cooper.mov', caption: 'MINI COOPER' },
+  { src: process.env.PUBLIC_URL + '/videos/Palisade.mov', caption: 'Hyundai Palisade' },
 ];
 
 const ReviewSection = () => {

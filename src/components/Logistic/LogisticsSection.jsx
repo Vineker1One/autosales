@@ -5,13 +5,14 @@ import '../../styles/LogisticsSection.css';
 
 
 const countries = [
-  { name: 'Европа', flag: '/flags/europe.png', background: '/backgrounds/europe.png' },
-  { name: 'Эмираты', flag: '/flags/uae.png', background: '/backgrounds/uae.png' },
-  { name: 'Китай', flag: '/flags/china.png', background: '/backgrounds/china.png' },
-  { name: 'Япония', flag: '/flags/japan.png', background: '/backgrounds/japan.png' },
-  { name: 'Корея', flag: '/flags/korea.png', background: '/backgrounds/korea.png' },
-  { name: 'Грузия', flag: '/flags/georgia.png', background: '/backgrounds/georgia.png' },
+  { name: 'Европа', flag: process.env.PUBLIC_URL + '/flags/europe.png', background: process.env.PUBLIC_URL + '/backgrounds/europe.png' },
+  { name: 'Эмираты', flag: process.env.PUBLIC_URL + '/flags/uae.png', background: process.env.PUBLIC_URL + '/backgrounds/uae.png' },
+  { name: 'Китай', flag: process.env.PUBLIC_URL + '/flags/china.png', background: process.env.PUBLIC_URL + '/backgrounds/china.png' },
+  { name: 'Япония', flag: process.env.PUBLIC_URL + '/flags/japan.png', background: process.env.PUBLIC_URL + '/backgrounds/japan.png' },
+  { name: 'Корея', flag: process.env.PUBLIC_URL + '/flags/korea.png', background: process.env.PUBLIC_URL + '/backgrounds/korea.png' },
+  { name: 'Грузия', flag: process.env.PUBLIC_URL + '/flags/georgia.png', background: process.env.PUBLIC_URL + '/backgrounds/georgia.png' },
 ];
+
 
 export default function LogisticsSection() {
   return (
