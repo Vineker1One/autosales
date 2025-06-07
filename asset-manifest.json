@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/autosales/static/css/main.ae274ca0.css",
-    "main.js": "/autosales/static/js/main.086b6394.js",
+    "main.js": "/autosales/static/js/main.0157dd53.js",
     "static/js/453.6aba1952.chunk.js": "/autosales/static/js/453.6aba1952.chunk.js",
     "static/media/blackAuto-mobile.png": "/autosales/static/media/blackAuto-mobile.e857e550ed812c64d9c8.png",
     "static/media/final-fon.png": "/autosales/static/media/final-fon.6bb0ba78aa2d7236c9ea.png",
@@ -35,11 +35,11 @@
     "static/media/ukijtor.eot": "/autosales/static/media/ukijtor.31d6cfe0d16ae931b73c.eot",
     "static/media/ukijtor.woff": "/autosales/static/media/ukijtor.31d6cfe0d16ae931b73c.woff",
     "main.ae274ca0.css.map": "/autosales/static/css/main.ae274ca0.css.map",
-    "main.086b6394.js.map": "/autosales/static/js/main.086b6394.js.map",
+    "main.0157dd53.js.map": "/autosales/static/js/main.0157dd53.js.map",
     "453.6aba1952.chunk.js.map": "/autosales/static/js/453.6aba1952.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ae274ca0.css",
-    "static/js/main.086b6394.js"
+    "static/js/main.0157dd53.js"
   ]
 }
