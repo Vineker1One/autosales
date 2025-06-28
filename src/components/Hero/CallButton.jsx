@@ -25,7 +25,7 @@ const CallButton = () => {
         {CALL_ICON}
       </div>
       <div className="call-btn-text">
-        Заказать<br />звонок
+        Написать
       </div>
     </button>
   );

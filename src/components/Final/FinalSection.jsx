@@ -50,7 +50,7 @@ const FinalSection = () => {
           >
             Написать
           </button>
-            <button className="final-button" onClick={handleScrollToForm}>Обратный звонок</button>
+            {/* <button className="final-button" onClick={handleScrollToForm}>Обратный звонок</button> */}
           </div>
         </div>
           <div id="contact-form">
@@ -64,11 +64,11 @@ const FinalSection = () => {
             <span className="final-adress-text">ТК «Рубин», павильон 21/2</span>
           </div>
 
-          <div className="final-phones">
+          {/* <div className="final-phones">
             <span className="final-phones-text">+7 (903) 407-55-00</span>
             <span className="final-phones-text">+7 (961) 290-09-08</span>
             <span className="final-phones-text third-number">+7 (961) 328-70-75</span>
-          </div>
+          </div> */}
 
           <div className="final-socials">
             <a href="https://t.me/autosalesrnd" target="_blank" rel="noopener noreferrer">

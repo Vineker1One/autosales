@@ -7,9 +7,9 @@ const initialVideos = [
   { src: process.env.PUBLIC_URL + '/videos/Lexus.MOV', caption: 'Lexus RX' },
   { src: process.env.PUBLIC_URL + '/videos/MERCEDES_GLB.MOV', caption: 'Mercedes Benz GLB 200d' },
   { src: process.env.PUBLIC_URL + '/videos/AMG_GT.MOV', caption: 'Mercedes AMG GT' },
-  { src: process.env.PUBLIC_URL + '/videos/BMWm340i.mov', caption: 'BMW M340i' },
-  { src: process.env.PUBLIC_URL + '/videos/cooper.mov', caption: 'MINI COOPER' },
-  { src: process.env.PUBLIC_URL + '/videos/Palisade.mov', caption: 'Hyundai Palisade' },
+  { src: process.env.PUBLIC_URL + '/videos/BMWm340i.MOV', caption: 'BMW M340i' },
+  { src: process.env.PUBLIC_URL + '/videos/cooper.MOV', caption: 'MINI COOPER' },
+  { src: process.env.PUBLIC_URL + '/videos/Palisade.MOV', caption: 'Hyundai Palisade' },
 ];
 
 const ReviewSection = () => {

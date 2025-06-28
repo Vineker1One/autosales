@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: clamp(2rem, 7vw, 7rem);
+    /* margin-bottom: clamp(2rem, 7vw, 7rem); */
     background-size:
                   clamp(20rem , 120vw , 120rem)
                   auto;
@@ -31,7 +31,7 @@
   }
   
   .final-buttons {
-    margin-block: clamp(1rem, 6vw, 4.5rem) clamp(2rem, 8vw, 7rem);
+    margin-block: clamp(1rem, 6vw, 7rem) clamp(2rem, 15vw, 15rem);
     display: flex;
     flex-direction: column;
     gap: clamp(.4rem, 1.2vw, 1rem);
@@ -55,7 +55,8 @@
   
 
 .final-info {
-  margin-top: clamp(2.2rem, 7vw, 6rem);
+  margin-top: clamp(2.2rem, 3vw, 4rem);
+  margin-bottom: clamp(2.2rem, 3vw, 4rem);;
   display: flex;
   justify-content: center;
   flex-direction: column;

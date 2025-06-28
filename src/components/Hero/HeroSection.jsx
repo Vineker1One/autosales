@@ -21,7 +21,7 @@ export default function HeroSection() {
     {/* <img src={blackAuto} alt="auto" className="hero-background-image" /> */}
     <div className="hero-buttons">
       <ContactButton />
-      <CallButton />
+      {/* <CallButton /> */}
     </div>
 
 </section>
